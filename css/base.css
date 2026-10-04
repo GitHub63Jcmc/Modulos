@@ -1,7 +1,7 @@
 
-/* ==========================================================================
+/* ===============================================
    ESTILOS GLOBALES Y COMPARTIDOS (css/base.css)
-   ========================================================================== */
+   =============================================== */
 
 /* RESET BÁSICO */
 * {
@@ -30,43 +30,31 @@ body {
   align-items: center;
   border-bottom: 2px solid #0284c7;
   min-height: 70px;
+  flex-wrap: wrap; /* Permite que los elementos pasen abajo si no caben */
+  gap: 1rem;
 }
 
-/* Color blanco y opacidad para el título secundario/marca del Módulo 1 */
+/* Título de la cabecera */
 .cabecera-principal h1,
 header h1 {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 600;
-  opacity: 0.85; /* Si quieres un ligero toque sutil respecto al H2 */
+  opacity: 0.85;
   margin: 0;
-  white-space: nowrap;
 }
 
 .header-info {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .header-info h2 {
   color: #ffffff;
   font-size: 1.25rem;
   margin: 0;
-  white-space: nowrap;
-}
-
-/* BOTONES DE NAVEGACIÓN ENTRE MÓDULOS / PORTAL */
-.btn-home {
-  background-color: #334155;
-  color: #38bdf8;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: bold;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-home:hover {
@@ -79,7 +67,7 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* Permite que los enlaces del menú se acomoden */
 }
 
 .menu-navegacion a {
@@ -90,7 +78,6 @@ header h1 {
   font-size: 0.88rem;
   font-weight: 500;
   text-align: center;
-  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -101,7 +88,29 @@ header h1 {
   color: #ffffff;
 }
 
-/* PIE DE PÁGINA (FOOTER STICKY) */
+/* ==========================================================================
+   ADAPTABILIDAD RESPONSIVE CABECERA
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .cabecera-modulo, .cabecera-principal {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .header-info {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menu-navegacion {
+    justify-content: center;
+  }
+}
+
+/* ---- PIE DE PÁGINA (FOOTER STICKY) ---- */
 .pie, .pie-pagina {
   background-color: #0f172a;
   color: #94a3b8;
@@ -116,11 +125,10 @@ header h1 {
   color: #ffffff;
 }
 
-/* -------------- Partes de componentes reutilizables (cabecera y pie) ---------------- */
-
-/* ==========================================================================
+/* ---- Partes de componentes reutilizables (cabecera y pie) ---- */
+/* =======================================
    TARJETAS DE CONTENIDO UNIVERSALES
-   ========================================================================== */
+   ======================================= */
 
 .tarjeta-contenido,
 .card {
@@ -158,4 +166,79 @@ header h1 {
   color: #334155;
   line-height: 1.6;
   margin-bottom: 1rem;
+}
+
+/* -------- Cambios recientes en estilos_02.css ------- */
+
+/* ==========================================================
+   BOTONES Y ELEMENTOS DE ACCIÓN UNIVERSALES (css/base.css)
+   ========================================================== */
+.btn,
+.btn-home,
+.btn-nav,
+.btn-acceso,
+.btn-limpiar,
+.btn-primario,
+.btn-secundario,
+.btn-peligro,
+button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+/* 2. Botón Primario / Enviar / Guardar (Azul) */
+.btn-primario,
+.btn-acceso,
+button[type="submit"] {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.btn-primario:hover,
+.btn-acceso:hover,
+button[type="submit"]:hover {
+  background-color: #0369a1;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 3. Botón Secundario / Navegación (Gris/Azul) */
+.btn-secundario,
+.btn-nav,
+.btn-home {
+  background-color: #334155;
+  color: #38bdf8;
+}
+
+.btn-secundario:hover,
+.btn-nav:hover,
+.btn-home:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* 4. Botón Peligro / Limpiar (Rojo) */
+.btn-peligro,
+.btn-limpiar {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-peligro:hover,
+.btn-limpiar:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.25);
+  transform: translateY(-1px);
 }
