@@ -115,3 +115,47 @@ header h1 {
   background-color: #f59e0b;
   color: #ffffff;
 }
+
+/* -------------- Partes de componentes reutilizables (cabecera y pie) ---------------- */
+
+/* ==========================================================================
+   TARJETAS DE CONTENIDO UNIVERSALES
+   ========================================================================== */
+
+.tarjeta-contenido,
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover suave para tarjetas interactivas */
+.tarjeta-contenido:hover,
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Títulos dentro de las tarjetas */
+.tarjeta-contenido h2,
+.tarjeta-contenido h3,
+.card h2,
+.card h3 {
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* Textos e instrucciones dentro de tarjetas */
+.tarjeta-contenido p,
+.card p {
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

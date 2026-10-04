@@ -1,16 +1,8 @@
+/* ---------------- Nueva Parte Módulos ------------------------------- */
+
 /* ==========================================================================
    ESTILOS ESPECÍFICOS DEL MÓDULO 1 (Modulo_01/styles/estilos_01.css)
    ========================================================================== */
-   /* Ejemplo de maquetación horizontal para el menú de navegación */
-header nav ul,
-.menu-navegacion ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 10px; /* o space-between / space-around */
-}
 
 .contenedor-principal {
   flex: 1;
@@ -22,13 +14,6 @@ header nav ul,
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
   align-items: start;
-}
-
-.tarjeta-contenido {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .barra-lateral {

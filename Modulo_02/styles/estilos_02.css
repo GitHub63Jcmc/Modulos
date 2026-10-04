@@ -2,6 +2,8 @@
    ESTILOS ESPECÍFICOS DEL MÓDULO 2 (Modulo_02/styles/estilos_02.css)
    ========================================================================== */
 
+/* ------------------- Parte nueva componentes ------------------- */
+
 .contenedor-principal {
   flex: 1;
   max-width: 900px;
@@ -13,11 +15,9 @@
   gap: 2rem;
 }
 
-.tarjeta {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+/* Mapeo de .tarjeta para heredar la tarjeta universal de base.css */
+.tarjeta-contenido {
+  color-scheme: tarjeta-contenido;
 }
 
 .tarjeta h2 {
@@ -34,6 +34,8 @@
   flex-wrap: wrap;
   margin-top: 1rem;
 }
+
+/* ------------------- Fin de parte nueva componentes ------------------- */
 
 .caja {
   flex: 1;
