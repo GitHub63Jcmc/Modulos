@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 - Selectores, Pseudoclases y Pseudoelementos</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_02.css">
+</head>
+<body>
+
+  <header class="cabecera-modulo">
+    <!-- En modulos/index.html -->
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_01/index.html" class="btn-home">Módulo 1 &rarr;</a>
+      <h2>Módulo 2: CSS3 Avanzado</h2>
+    </div>
+  
+    <nav class="menu-navegacion">
+      <a href="index.html" class="active">Selectores y Pseudo</a>
+      <a href="bordes-sombras.html">Bordes, Sombras y Degradados</a>
+      <a href="tipografia.html">Tipografía Web</a>
+      <a href="maquetacion.html">Flexbox y Grid</a>
+      <a href="animaciones.html">Animaciones 2D/3D</a>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <!-- SECCIÓN 1: Selectores de Combinación y Atributos -->
+    <section class="tarjeta" id="combinadores">
+      <h2>1. Selectores Combinadores y de Atributos</h2>
+      
+      <div class="contenedor-padre">
+        <p>Este es un hijo directo <code>&lt;p&gt;</code> de <code>.contenedor-padre</code>.</p>
+        <div>
+          <p>Este es un nieto (hijo indirecto) de <code>.contenedor-padre</code>.</p>
+        </div>
+      </div>
+
+      <h3>Lista de enlaces por protocolo (Selectores de Atributo)</h3>
+      <ul class="lista-enlaces">
+        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs (Seguro HTTPS)</a></li>
+        <li><a href="http://example.com" target="_blank">Sitio web antiguo (HTTP)</a></li>
+        <li><a href="img/certificado.pdf" target="_blank">Descargar Manual (Archivo PDF)</a></li>
+      </ul>
+    </section>
+
+    <!-- SECCIÓN 2: Pseudoclases Estructurales y de Estado -->
+    <section class="tarjeta" id="estructurales">
+      <h2>2. Pseudoclases Estructurales y de Estado</h2>
+
+      <h3>Tabla con filas alternadas (<code>:nth-child</code>)</h3>
+      <table class="tabla-demo">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Propiedad CSS</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>:hover</td><td>Pseudoclase</td></tr>
+          <tr><td>2</td><td>::before</td><td>Pseudoelemento</td></tr>
+          <tr><td>3</td><td>:nth-child()</td><td>Pseudoclase</td></tr>
+          <tr><td>4</td><td>::first-letter</td><td>Pseudoelemento</td></tr>
+          <tr><td>5</td><td>:required</td><td>Pseudoclase</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Formulario con Validación Visual (<code>:valid</code> / <code>:invalid</code>)</h3>
+      <form class="form-demo">
+        <div class="campo">
+          <label for="email">Correo electrónico (requerido):</label>
+          <input type="email" id="email" required placeholder="ejemplo@dominio.com">
+        </div>
+
+        <div class="campo">
+          <label for="pass">Contraseña (mínimo 6 caracteres):</label>
+          <input type="password" id="pass" required minlength="6" placeholder="******">
+        </div>
+
+        <div class="campo-check">
+          <input type="checkbox" id="acepto" required>
+          <label for="acepto">Acepto los términos y condiciones</label>
+        </div>
+      </form>
+    </section>
+
+    <!-- SECCIÓN 3: Pseudoelementos -->
+    <section class="tarjeta" id="pseudoelementos">
+      <h2>3. Pseudoelementos Decorativos</h2>
+
+      <article class="articulo-destacado">
+        <p class="parrafo-editorial">
+          El desarrollo web moderno con CSS3 permite añadir detalles ornamentales sin necesidad de ensuciar el marcado HTML con etiquetas vacías. La separación entre estructura y presentación es completa.
+        </p>
+      </article>
+
+      <blockquote class="cita-destacada">
+        La simplicidad es la máxima sofisticación en el diseño CSS.
+      </blockquote>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>&copy; jcmc - 2026 Módulo 2 - Ejercicio de CSS3 Avanzado</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.4 Flexbox y CSS Grid - Módulo 2</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_02.css">
+</head>
+<body>
+
+  <header class="cabecera-modulo">
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_01/index.html" class="btn-home">Módulo 1 &rarr;</a>
+      <h2>Módulo 2: CSS3 Avanzado</h2>
+    </div>
+
+    <nav class="menu-navegacion">
+      <a href="index.html">Selectores y Pseudo</a>
+      <a href="bordes-sombras.html">Bordes, Sombras y Degradados</a>
+      <a href="tipografia.html">Tipografía Web</a>
+      <a href="maquetacion.html" class="active">Flexbox y Grid</a>
+      <a href="animaciones.html">Animaciones 2D/3D</a>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <!-- DEMO FLEXBOX -->
+    <section class="tarjeta">
+      <h2>1. Maquetación Flexible (Flexbox)</h2>
+      <p>Alineación unidireccional y redistribución de espacio con <code>display: flex</code>:</p>
+      <div class="flex-contenedor">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+      </div>
+    </section>
+
+    <!-- DEMO CSS GRID -->
+    <section class="tarjeta">
+      <h2>2. Maquetación Bidimensional (CSS Grid)</h2>
+      <p>Diseño basado en filas y columnas dinámicas con <code>grid-template-columns</code> y la unidad <code>fr</code>:</p>
+      <div class="grid-contenedor">
+        <div class="grid-item">Caja A</div>
+        <div class="grid-item">Caja B</div>
+        <div class="grid-item">Caja C</div>
+        <div class="grid-item">Caja D</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>&copy; jcmc -  2026 Módulo 2 - Ejercicio de CSS3 Avanzado</p>
+  </footer>
+
+</body>
+</html>

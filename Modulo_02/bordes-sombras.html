@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.2 Bordes, Sombras y Degradados - Módulo 2</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_02.css">
+</head>
+<body>
+
+  <header class="cabecera-modulo">
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_01/index.html" class="btn-home">Módulo 1 &rarr;</a>
+      <h2>Módulo 2: CSS3 Avanzado</h2>
+    </div>
+  
+    <nav class="menu-navegacion">
+      <a href="index.html">Selectores y Pseudo</a>
+      <a href="bordes-sombras.html" class="active">Bordes, Sombras y Degradados</a>
+      <a href="tipografia.html">Tipografía Web</a>
+      <a href="maquetacion.html">Flexbox y Grid</a>
+      <a href="animaciones.html">Animaciones 2D/3D</a>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <!-- 1. BORDES REDONDEADOS -->
+    <section class="tarjeta">
+      <h2>1. Bordes Redondeados (<code>border-radius</code>)</h2>
+      <div class="demostracion-grid">
+        <div class="caja caja-redondeada">Caja con border-radius (12px)</div>
+        <div class="caja caja-circular">
+          <span>Avatar Circular (50%)</span>
+        </div>
+        <div class="caja caja-asimetrica">Bordes Asimétricos (20px 0 20px 0)</div>
+      </div>
+    </section>
+
+    <!-- 2. SOMBRAS -->
+    <section class="tarjeta">
+      <h2>2. Sombras en Caja y Texto (<code>box-shadow</code> / <code>text-shadow</code>)</h2>
+      <div class="demostracion-grid">
+        <div class="caja sombra-suave">Sombra Suave (Elevación)</div>
+        <div class="caja sombra-interior">Sombra Interior (Inset)</div>
+        <div class="caja sombra-neon">
+          <p class="texto-neon">EFECTO NEÓN</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DEGRADADOS -->
+    <section class="tarjeta">
+      <h2>3. Degradados Lineales y Radiales (Gradients)</h2>
+      <div class="demostracion-grid">
+        <div class="caja degradado-lineal">Degradado Lineal (Linear)</div>
+        <div class="caja degradado-radial">Degradado Radial (Radial)</div>
+        <div class="caja degradado-texto">
+          <h3 class="texto-degradado">Texto con Degradado</h3>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>&copy; jcmc -  2026 Módulo 2 - Ejercicio de CSS3 Avanzado</p>
+  </footer>
+
+</body>
+</html>

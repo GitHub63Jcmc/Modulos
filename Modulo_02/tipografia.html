@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.3 Tipografía Web - Módulo 2</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_02.css">
+  <!-- Carga de fuentes externas desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="cabecera-modulo">
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_01/index.html" class="btn-home">Módulo 1 &rarr;</a>
+      <h2>Módulo 2: CSS3 Avanzado</h2>
+    </div>
+
+    <nav class="menu-navegacion">
+      <a href="index.html">Selectores y Pseudo</a>
+      <a href="bordes-sombras.html">Bordes, Sombras y Degradados</a>
+      <a href="tipografia.html" class="active">Tipografía Web</a>
+      <a href="maquetacion.html">Flexbox y Grid</a>
+      <a href="animaciones.html">Animaciones 2D/3D</a>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <section class="tarjeta">
+      <h2>1. Fuentes Web Externas (Google Fonts)</h2>
+      <h3 class="fuente-serifa">Título con tipografía 'Roboto Slab' (Serif)</h3>
+      <p class="fuente-sans">Este párrafo utiliza la fuente 'Roboto' con grosor normal y un interlineado adaptado a la lectura en pantallas.</p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>2. Unidades Relativas (<code>rem</code>, <code>em</code>, <code>vw</code>)</h2>
+      <div class="demo-unidades">
+        <p class="texto-rem">Texto escalado en <code>1.2rem</code> (relativo a la raíz HTML).</p>
+        <div class="padre-em">
+          Contenedor Padre (font-size: 20px)
+          <p class="texto-em">Texto en <code>0.9em</code> (relativo a su elemento padre).</p>
+        </div>
+        <p class="texto-vw">Texto con escala <code>2.5vw</code> (relativo al ancho de la ventana).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>&copy; jcmc -  2026 Módulo 2 - Ejercicio de CSS3 Avanzado</p>
+  </footer>
+
+</body>
+</html>

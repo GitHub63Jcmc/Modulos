@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta de Componentes Reutilizables - Curso Web</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+    header {
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      color: #0f172a;
+      font-size: 22pt;
+      margin: 0 0 6px 0;
+    }
+    .subtitulo {
+      color: #64748b;
+      font-size: 11pt;
+      margin: 0;
+    }
+    .seccion {
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #007bff;
+      font-size: 14pt;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .codigo-inline {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+    }
+    footer {
+      margin-top: 30px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
+      font-size: 9pt;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Guía de Componentes Reutilizables</h1>
+    <p class="subtitulo">Plan de Refactorización y Modularización - Portal de Aprendizaje HTML5 / CSS3</p>
+  </header>
+
+  <div class="seccion">
+    <h2>1. Cabecera Global (<span class="codigo-inline">&lt;header&gt;</span>)</h2>
+    <ul>
+      <li><span class="highlight">Navegación entre Módulos (<span class="codigo-inline">.nav-modulos</span>):</span> Botones flotantes de retroceso y salto entre secciones (<span class="codigo-inline">&larr; Portal</span>, <span class="codigo-inline">Módulo 1</span>, <span class="codigo-inline">Módulo 2</span>, etc.).</li>
+      <li><span class="highlight">Menú de Pestañas Internas (<span class="codigo-inline">.menu-navegacion</span>):</span> Estructura horizontal (<span class="codigo-inline">&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;</span>) con clase dinámicamente asignada (<span class="codigo-inline">.activo</span>) según la página visitada.</li>
+      <li><span class="highlight">Marca / Título del Sitio (<span class="codigo-inline">&lt;h1&gt;</span>):</span> Encabezado principal estilizado en color blanco brillante sobre fondo oscuro.</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>2. Pie de Página Global (<span class="codigo-inline">&lt;footer&gt;</span>)</h2>
+    <ul>
+      <li><span class="highlight">Pie de página estandarizado:</span> Centralización de aviso de copyright, año y créditos del curso en un único bloque reutilizable en todas las vistas.</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>3. Tarjetas de Contenido (<span class="codigo-inline">.tarjeta-contenido</span> / <span class="codigo-inline">.card</span>)</h2>
+    <ul>
+      <li><span class="highlight">Contenedores universales:</span> Estructura estándar para envolver temáticas, ejercicios interactivos o explicaciones de APIs manteniendo sombras, radios de borde y paddings uniformes.</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>4. Botones y Elementos de Acción (<span class="codigo-inline">.btn-nav</span>, <span class="codigo-inline">.btn-acceso</span>)</h2>
+    <ul>
+      <li><span class="highlight">Estilos de interacción:</span> Botones primarios, secundarios y hovers unificados centralizadamente para evitar redundancia de clases CSS.</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>5. Hoja de Estilos Base (<span class="codigo-inline">base.css</span>)</h2>
+    <ul>
+      <li><span class="highlight">Variables CSS (<span class="codigo-inline">:root</span>):</span> Paleta de colores globales (azules, grises, fondos oscuros), tipografía base y reseteo inicial (<span class="codigo-inline">box-sizing</span>, <span class="codigo-inline">margin: 0</span>).</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Portal de Aprendizaje HTML5 / CSS3 &mdash; Documento de Arquitectura Web</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+/* ==========================================================================
+   ESTILOS GLOBALES Y COMPARTIDOS (css/base.css)
+   ========================================================================== */
+
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* LAYOUT BASE Y STICKY FOOTER */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #d6d7d8;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ESTILOS CABECERA GENERAL */
+.cabecera-modulo, .cabecera-principal {
+  background-color: #0f172a;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #0284c7;
+  min-height: 70px;
+}
+
+/* Color blanco y opacidad para el título secundario/marca del Módulo 1 */
+.cabecera-principal h1,
+header h1 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.85; /* Si quieres un ligero toque sutil respecto al H2 */
+  margin: 0;
+  white-space: nowrap;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.header-info h2 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* BOTONES DE NAVEGACIÓN ENTRE MÓDULOS / PORTAL */
+.btn-home {
+  background-color: #334155;
+  color: #38bdf8;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-home:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* MENÚ NAVEGACIÓN CABECERA */
+.menu-navegacion {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: nowrap;
+}
+
+.menu-navegacion a {
+  color: #94a3b8;
+  padding: 0.4rem 0.65rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-navegacion a.active,
+.menu-navegacion a.activo,
+.menu-navegacion a:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* PIE DE PÁGINA (FOOTER STICKY) */
+.pie, .pie-pagina {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* SELECCIÓN DE TEXTO GLOBAL */
+::selection {
+  background-color: #f59e0b;
+  color: #ffffff;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículos - Módulo 1 HTML5</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_01.css">
+</head>
+<body>
+
+  <!-- Cabecera principal y Menú de Navegación -->
+  <header class="cabecera-principal">
+    <!-- En modulos/index.html -->
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_02/index.html" class="btn-home">Módulo 2 &rarr;</a>
+      <h2>Módulo 1: HTML5 Semántico</h2>
+    </div>
+
+    <nav class="menu-navegacion">
+      <ul>
+        <li><a href="index.html" class="activo">Artículos</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="canvas.html">Canvas API</a></li>
+        <li><a href="formulario.html">Formulario</a></li>
+      </ul>
+    </nav>
+    <h1>Portal de Aprendizaje HTML5</h1>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenedor-principal">
+
+    <article class="tarjeta-contenido" data-categoria="tutorial" data-autor="Profesor">
+      <header>
+        <h2>1.1 y 1.2 El desarrollo web y evolución a HTML5</h2>
+        <p class="meta-info">Publicado el <time datetime="2026-10-02">2 de octubre de 2026</time></p>
+      </header>
+      
+      <p>HTML5 simplificó el doctype y trajo etiquetas con significado semántico. Además, las etiquetas no reconocidas por navegadores antiguos simplemente se ignoran como contenedor, pero su contenido sigue visible.</p>
+
+      <!-- Atributo global contenteditable -->
+      <section class="bloque-notas">
+        <h3>Notas editables en vivo (Atributo <code>contenteditable</code>):</h3>
+        <div contenteditable="true" class="caja-editable">
+          Haz clic aquí para escribir tus notas sobre este módulo...
+        </div>
+      </section>
+    </article>
+
+    <aside class="barra-lateral">
+      <h3>Información Adicional</h3>
+      <p>El estándar de HTML5 es un estándar vivo en constante evolución gestionado por la WHATWG y la W3C.</p>
+      
+      <div id="mensajeOculto" hidden>
+        Este mensaje está oculto mediante el atributo nativo <code>hidden</code>.
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <p>&copy; jcmc - 2026 Módulo 1 - HTML5 y CSS3. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario - Módulo 1 HTML5</title>
+  <!-- 1. Estilos Globales Compartidos -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="styles/estilos_01.css">
+</head>
+<body>
+
+  <header class="cabecera-principal">
+    <!-- En modulos/index.html -->
+    <div class="header-info">
+      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
+      <a href="../modulo_02/index.html" class="btn-home">Módulo 2 &rarr;</a>
+      <h2>Módulo 1: HTML5 Semántico</h2>
+    </div>
+    
+    <nav class="menu-navegacion">
+      <ul>
+        <li><a href="index.html">Artículos</a></li>
+        <li><a href="multimedia.html">Multimedia</a></li>
+        <li><a href="canvas.html">Canvas API</a></li>
+        <li><a href="formulario.html" class="activo">Formulario</a></li>
+      </ul>
+    </nav>
+    <h1>Portal de Aprendizaje HTML5</h1>
+  </header>
+
+  <main class="contenedor-principal">
+
+    <section class="tarjeta-contenido">
+      <h2>1.5 Formulario de Registro con Tipos Avanzados de HTML5</h2>
+      
+      <form action="#" method="POST" class="formulario-html5">
+        
+        <div class="campo-grupo">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+        </div>
+
+        <div class="campo-grupo">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="campo-grupo">
+          <label for="fecha">Fecha de inicio (Input Date):</label>
+          <input type="date" id="fecha" name="fecha_inicio" required>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="experiencia">Años de experiencia (Input Number):</label>
+          <input type="number" id="experiencia" name="experiencia" min="0" max="50" value="1">
+        </div>
+
+        <button type="submit">Enviar Formulario</button>
+      </form>
+    </section>
+
+    <aside class="barra-lateral">
+      <h3>Validación Nativa</h3>
+      <p>HTML5 permite validar campos mediante atributos como <code>required</code>, <code>min</code>, <code>max</code> sin necesidad de JavaScript.</p>
+    </aside>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <p>&copy; jcmc - 2026 Módulo 1 - HTML5 y CSS3. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
