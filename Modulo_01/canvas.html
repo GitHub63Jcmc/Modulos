@@ -10,24 +10,8 @@
 </head>
 <body>
 
-  <header class="cabecera-principal">
-    <!-- En modulos/index.html -->
-    <div class="header-info">
-      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
-      <a href="../modulo_02/index.html" class="btn-home">Módulo 2 &rarr;</a>
-      <h2>Módulo 1: HTML5 Semántico</h2>
-    </div>
-    
-    <nav class="menu-navegacion">
-      <ul>
-        <li><a href="index.html">Artículos</a></li>
-        <li><a href="multimedia.html">Multimedia</a></li>
-        <li><a href="canvas.html" class="activo">Canvas API</a></li>
-        <li><a href="formulario.html">Formulario</a></li>
-      </ul>
-    </nav>
-    <h1>Portal de Aprendizaje HTML5</h1>
-  </header>
+  <!-- COMPONENTE REUTILIZABLE DE CABECERA -->
+  <mi-cabecera modulo="1" pagina="canvas.html"></mi-cabecera>
 
   <main class="contenedor-principal">
 
@@ -65,5 +49,7 @@
   </footer>
 
   <script src="js/script.js"></script>
+   <!-- Carga del script del componente -->
+  <script src="../components/cabecera.js"></script>
 </body>
 </html>

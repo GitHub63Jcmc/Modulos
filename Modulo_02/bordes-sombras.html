@@ -10,21 +10,8 @@
 </head>
 <body>
 
-  <header class="cabecera-modulo">
-    <div class="header-info">
-      <a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>
-      <a href="../modulo_01/index.html" class="btn-home">Módulo 1 &rarr;</a>
-      <h2>Módulo 2: CSS3 Avanzado</h2>
-    </div>
-  
-    <nav class="menu-navegacion">
-      <a href="index.html">Selectores y Pseudo</a>
-      <a href="bordes-sombras.html" class="active">Bordes, Sombras y Degradados</a>
-      <a href="tipografia.html">Tipografía Web</a>
-      <a href="maquetacion.html">Flexbox y Grid</a>
-      <a href="animaciones.html">Animaciones 2D/3D</a>
-    </nav>
-  </header>
+  <!-- COMPONENTE REUTILIZABLE DE CABECERA -->
+  <mi-cabecera modulo="2" pagina="bordes-sombras.html"></mi-cabecera>
 
   <main class="contenedor-principal">
 
@@ -69,6 +56,9 @@
   <footer class="pie">
     <p>&copy; jcmc -  2026 Módulo 2 - Ejercicio de CSS3 Avanzado</p>
   </footer>
+
+  <!-- Carga del script del componente -->
+  <script src="../components/cabecera.js"></script>
 
 </body>
 </html>
