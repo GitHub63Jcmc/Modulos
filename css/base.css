@@ -1,40 +1,66 @@
+/* -------------------------------------------------------------------- */
+/* ==========================================================================
+   HOJA DE ESTILOS BASE (css/base.css)
+   ========================================================================== */
 
-/* ===============================================
-   ESTILOS GLOBALES Y COMPARTIDOS (css/base.css)
-   =============================================== */
+/* 1. VARIABLES GLOBALES (PALETA DE COLORES Y TIPOGRAFÍA) */
+:root {
+  /* Colores primarios y acentos */
+  --color-primario: #0284c7;
+  --color-primario-hover: #0369a1;
+  --color-secundario: #334155;
+  --color-acento: #38bdf8;
+  --color-peligro: #ef4444;
+  --color-peligro-hover: #dc2626;
+  --color-alerta: #f59e0b;
 
-/* RESET BÁSICO */
+  /* Fondos y superficies */
+  --bg-cuerpo: #d6d7d8;
+  --bg-oscuro: #0f172a;
+  --bg-tarjeta: #ffffff;
+
+  /* Textos y bordes */
+  --color-texto: #1e293b;
+  --color-texto-secundario: #334155;
+  --color-texto-atenuado: #94a3b8;
+  --color-borde: #e2e8f0;
+
+  /* Tipografía base */
+  --fuente-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. RESET BÁSICO INICIAL */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* LAYOUT BASE Y STICKY FOOTER */
+/* 3. LAYOUT BASE Y STICKY FOOTER */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fuente-base);
   line-height: 1.6;
-  background-color: #d6d7d8;
-  color: #1e293b;
+  background-color: var(--bg-cuerpo);
+  color: var(--color-texto);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ESTILOS CABECERA GENERAL */
-.cabecera-modulo, .cabecera-principal {
-  background-color: #0f172a;
+/* 4. CABECERA GENERAL */
+.cabecera-modulo, 
+.cabecera-principal {
+  background-color: var(--bg-oscuro);
   padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #0284c7;
+  border-bottom: 2px solid var(--color-primario);
   min-height: 70px;
-  flex-wrap: wrap; /* Permite que los elementos pasen abajo si no caben */
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Título de la cabecera */
 .cabecera-principal h1,
 header h1 {
   color: #ffffff;
@@ -57,21 +83,16 @@ header h1 {
   margin: 0;
 }
 
-.btn-home:hover {
-  background-color: #0284c7;
-  color: #ffffff;
-}
-
-/* MENÚ NAVEGACIÓN CABECERA */
+/* Menú de navegación de cabecera */
 .menu-navegacion {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  flex-wrap: wrap; /* Permite que los enlaces del menú se acomoden */
+  flex-wrap: wrap;
 }
 
 .menu-navegacion a {
-  color: #94a3b8;
+  color: var(--color-texto-atenuado);
   padding: 0.4rem 0.65rem;
   text-decoration: none;
   border-radius: 4px;
@@ -84,95 +105,64 @@ header h1 {
 .menu-navegacion a.active,
 .menu-navegacion a.activo,
 .menu-navegacion a:hover {
-  background-color: #0284c7;
+  background-color: var(--color-primario);
   color: #ffffff;
 }
 
-/* ==========================================================================
-   ADAPTABILIDAD RESPONSIVE CABECERA
-   ========================================================================== */
-
+/* Adaptabilidad responsive de la cabecera */
 @media (max-width: 768px) {
-  .cabecera-modulo, .cabecera-principal {
+  .cabecera-modulo, 
+  .cabecera-principal {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
     padding: 1rem;
   }
 
-  .header-info {
+  .header-info,
+  .menu-navegacion {
     justify-content: center;
     flex-wrap: wrap;
   }
-
-  .menu-navegacion {
-    justify-content: center;
-  }
 }
 
-/* ---- PIE DE PÁGINA (FOOTER STICKY) ---- */
-.pie, .pie-pagina {
-  background-color: #0f172a;
-  color: #94a3b8;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
-}
-
-/* SELECCIÓN DE TEXTO GLOBAL */
-::selection {
-  background-color: #f59e0b;
-  color: #ffffff;
-}
-
-/* ---- Partes de componentes reutilizables (cabecera y pie) ---- */
-/* =======================================
-   TARJETAS DE CONTENIDO UNIVERSALES
-   ======================================= */
-
+/* 5. TARJETAS DE CONTENIDO UNIVERSALES */
 .tarjeta-contenido,
 .card {
-  background-color: #ffffff;
+  background-color: var(--bg-tarjeta);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 1.8rem;
   margin-bottom: 2rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--color-borde);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efecto hover suave para tarjetas interactivas */
 .tarjeta-contenido:hover,
 .card:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Títulos dentro de las tarjetas */
 .tarjeta-contenido h2,
 .tarjeta-contenido h3,
 .card h2,
 .card h3 {
-  color: #0f172a;
+  color: var(--bg-oscuro);
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.35rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--color-borde);
   padding-bottom: 0.5rem;
 }
 
-/* Textos e instrucciones dentro de tarjetas */
 .tarjeta-contenido p,
 .card p {
-  color: #334155;
+  color: var(--color-texto-secundario);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-/* -------- Cambios recientes en estilos_02.css ------- */
-
-/* ==========================================================
-   BOTONES Y ELEMENTOS DE ACCIÓN UNIVERSALES (css/base.css)
-   ========================================================== */
+/* 6. BOTONES Y ELEMENTOS DE ACCIÓN UNIVERSALES */
 .btn,
 .btn-home,
 .btn-nav,
@@ -198,47 +188,63 @@ button[type="submit"] {
   user-select: none;
 }
 
-/* 2. Botón Primario / Enviar / Guardar (Azul) */
+/* Botón Primario / Enviar / Guardar */
 .btn-primario,
 .btn-acceso,
 button[type="submit"] {
-  background-color: #0284c7;
+  background-color: var(--color-primario);
   color: #ffffff;
 }
 
 .btn-primario:hover,
 .btn-acceso:hover,
 button[type="submit"]:hover {
-  background-color: #0369a1;
+  background-color: var(--color-primario-hover);
   box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
   transform: translateY(-1px);
 }
 
-/* 3. Botón Secundario / Navegación (Gris/Azul) */
+/* Botón Secundario / Navegación */
 .btn-secundario,
 .btn-nav,
 .btn-home {
-  background-color: #334155;
-  color: #38bdf8;
+  background-color: var(--color-secundario);
+  color: var(--color-acento);
 }
 
 .btn-secundario:hover,
 .btn-nav:hover,
 .btn-home:hover {
-  background-color: #0284c7;
+  background-color: var(--color-primario);
   color: #ffffff;
 }
 
-/* 4. Botón Peligro / Limpiar (Rojo) */
+/* Botón Peligro / Limpiar */
 .btn-peligro,
 .btn-limpiar {
-  background-color: #ef4444;
+  background-color: var(--color-peligro);
   color: #ffffff;
 }
 
 .btn-peligro:hover,
 .btn-limpiar:hover {
-  background-color: #dc2626;
+  background-color: var(--color-peligro-hover);
   box-shadow: 0 4px 10px rgba(239, 68, 68, 0.25);
   transform: translateY(-1px);
+}
+
+/* 7. PIE DE PÁGINA (STICKY FOOTER) */
+.pie, 
+.pie-pagina {
+  background-color: var(--bg-oscuro);
+  color: var(--color-texto-atenuado);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* 8. SELECCIÓN DE TEXTO GLOBAL */
+::selection {
+  background-color: var(--color-alerta);
+  color: #ffffff;
 }
