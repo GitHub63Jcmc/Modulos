@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 03 - HTML5 APIs Dashboard</title>
+  
+  <!-- Estilos globales y específicos del módulo -->
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="css/modulo_03.css">
+
+  <!-- Carga de componentes como módulos JS -->
+  <script type="module" src="components/geo-weather.js"></script>
+  <script type="module" src="components/task-board.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <h1>Dashboard Módulo 3</h1>
+    <p>APIs Nativas de HTML5: Geolocation, Fetch, Web Storage & Drag & Drop</p>
+  </header>
+
+  <main class="dashboard-grid">
+    <!-- Componente 1: Tiempo por geolocalización -->
+    <section class="widget-card">
+      <geo-weather></geo-weather>
+    </section>
+
+    <!-- Componente 2: Tablero de tareas -->
+    <section class="widget-card">
+      <task-board></task-board>
+    </section>
+  </main>
+</body>
+</html>
