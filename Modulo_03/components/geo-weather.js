@@ -82,7 +82,7 @@ class GeoWeather extends HTMLElement {
     this.shadowRoot.innerHTML = `
       ${this.getStyles()}
       <div class="weather-card">
-        <h2>Clima Actual</h2>
+        <h2>Clima Actual en: <span class="azul">${data.location}</span></h2>
         <div class="temp-display">
           <span class="temp">${data.temperature}</span>
           <span class="unit">${data.units}</span>
@@ -108,6 +108,9 @@ class GeoWeather extends HTMLElement {
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.1);
           text-align: center;
+        }
+        .azul {
+          color: #246cf1;
         }
         .weather-card.error {
           border-color: #ff5555;
