@@ -1,10 +1,13 @@
-
 class MiCabecera extends HTMLElement {
   connectedCallback() {
     this.style.display = 'block';
 
     const moduloActual = this.getAttribute('modulo') || '1';
     const paginaActiva = this.getAttribute('pagina') || 'index.html';
+
+    // Detección automática de profundidad para producción y local
+    const isInSubfolder = window.location.pathname.includes('/Modulo_');
+    const rootPath = isInSubfolder ? '../' : './';
 
     // Titulares para cada módulo
     const titulosModulos = {
@@ -36,18 +39,18 @@ class MiCabecera extends HTMLElement {
       ]
     };
 
-    // Construcción dinámica de botones de navegación entre módulos
-    let botonesNavegacion = `<a href="../index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>`;
+    // Construcción dinámica de botones de navegación entre módulos adaptada
+    let botonesNavegacion = `<a href="${rootPath}index.html" class="btn-home" title="Volver al Portal Principal">&larr; Portal</a>`;
 
     if (moduloActual === '1') {
-      botonesNavegacion += `<a href="../Modulo_02/index.html" class="btn-home">Módulo 2 &rarr;</a>`;
-      botonesNavegacion += `<a href="../Modulo_03/index.html" class="btn-home">Módulo 3 &rarr;</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_02/index.html" class="btn-home">Módulo 2 &rarr;</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_03/index.html" class="btn-home">Módulo 3 &rarr;</a>`;
     } else if (moduloActual === '2') {
-      botonesNavegacion += `<a href="../Modulo_01/index.html" class="btn-home">&larr; Módulo 1</a>`;
-      botonesNavegacion += `<a href="../Modulo_03/index.html" class="btn-home">Módulo 3 &rarr;</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_01/index.html" class="btn-home">&larr; Módulo 1</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_03/index.html" class="btn-home">Módulo 3 &rarr;</a>`;
     } else if (moduloActual === '3') {
-      botonesNavegacion += `<a href="../Modulo_01/index.html" class="btn-home">&larr; Módulo 1</a>`;
-      botonesNavegacion += `<a href="../Modulo_02/index.html" class="btn-home">&larr; Módulo 2</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_01/index.html" class="btn-home">&larr; Módulo 1</a>`;
+      botonesNavegacion += `<a href="${rootPath}Modulo_02/index.html" class="btn-home">&larr; Módulo 2</a>`;
     }
 
     const pestañas = pestañasModulos[moduloActual] || [];
