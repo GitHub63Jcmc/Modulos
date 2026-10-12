@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 - Canvas API</title>
+  
+  <!-- Estilos globales y específicos del módulo -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="css/modulo_03.css">
+</head>
+<body>
+
+  <!-- Cabecera componente unificado -->
+  <mi-cabecera modulo="3" pagina="canvas.html"></mi-cabecera>
+
+  <!-- Contenido principal centrado -->
+  <main class="contenedor-principal">
+    
+    <section class="tarjeta-contenido" data-categoria="tutorial" data-autor="Professor">
+      <header class="card-header">
+        <h2>3.1 Introducción al elemento canvas y su contexto de dibujo</h2>
+        <span class="meta-info">Lección práctica de gráficos y dibujo 2D</span>
+      </header>
+
+      <article>
+        <p>
+          La etiqueta <code>&lt;canvas&gt;</code> reserva en la página un <strong>lienzo de píxeles</strong> sobre el que se dibuja desde JavaScript: gráficos, juegos, editores de imagen, firmas digitales... Se declara con sus dimensiones (ej. <code>&lt;canvas id="lienzo" width="600" height="400"&gt;&lt;/canvas&gt;</code>).
+        </p>
+        <p>
+          Si no se indican, mide 300×150 y el texto interior sirve de alternativa para navegadores sin soporte. Conviene fijar el tamaño con los atributos, no solo con CSS: escalarlo con CSS deforma y pixela el dibujo.
+        </p>
+
+        <h3>El Contexto de Dibujo (2D)</h3>
+        <p>
+          El lienzo por sí solo no hace nada; para dibujar se pide <strong>su contexto</strong>, el objeto que contiene todos los métodos de dibujo. El bidimensional se obtiene con <code>const ctx = lienzo.getContext('2d');</code>. Todo se sitúa mediante coordenadas: <strong>el origen (0,0) está en la esquina superior izquierda</strong>, la <em>X</em> crece hacia la derecha y la <em>Y</em> hacia abajo.
+        </p>
+
+        <!-- Ejemplo Práctico en Directo -->
+        <div class="card-box" style="text-align: center; margin-top: 25px;">
+          <h4>Ejemplo Práctico en Directo: Dibujar Formas</h4>
+          <p style="font-size: 14px; color: #aaa;">Usa los botones para interactuar con el contexto gráfico de Canvas:</p>
+          
+          <div style="margin: 15px 0;">
+            <canvas id="miLienzo" width="500" height="250" style="background: #111; border: 1px solid #444; border-radius: 6px;"></canvas>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <button id="btnRectangulo" class="btn-home" style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Dibujar Rectángulo</button>
+            <button id="btnCirculo" class="btn-home" style="background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Dibujar Círculo</button>
+            <button id="btnLimpiar" class="btn-home" style="background-color: #f44336; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Limpiar Lienzo</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Script interactivo de la lección de Canvas -->
+  <script>
+    const canvas = document.getElementById('miLienzo');
+    const ctx = canvas.getContext('2d');
+
+    document.getElementById('btnRectangulo').addEventListener('click', () => {
+      ctx.fillStyle = '#2196F3';
+      ctx.fillRect(50, 50, 150, 100);
+    });
+
+    document.getElementById('btnCirculo').addEventListener('click', () => {
+      ctx.beginPath();
+      ctx.arc(350, 100, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = '#4CAF50';
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#fff';
+      ctx.stroke();
+    });
+
+    document.getElementById('btnLimpiar').addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+  </script>
+
+  <!-- Pie de página componente reutilizable -->
+  <mi-pie></mi-pie>
+
+  <script src="../components/pie.js"></script>
+  <script src="../components/cabecera.js"></script>
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 03 - HTML5 APIs Dashboard</title>
   
-  <!-- Estilos globales del proyecto y específicos del módulo -->
+  <!-- Estilos específicos del módulo 03 -->
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/modulo_03.css">
 
@@ -19,17 +19,24 @@
   <!-- Cabecera principal o componente unificado -->
   <mi-cabecera modulo="3" pagina="index.html"></mi-cabecera>
 
-  <!-- Contenido principal -->
-  <main class="dashboard-grid">
-    <!-- Componente 1: Tiempo por geolocalización -->
-    <section class="widget-card">
-      <geo-weather></geo-weather>
-    </section>
+  <!-- Contenido principal estructurado con tarjetas -->
+  <main class="dashboard-container">
+    <header class="module-header">
+      <h2>Módulo 3: Principales APIs de HTML5</h2>
+      <p>Panel principal de gestión, APIs nativas, geolocalización, clima en tiempo real y almacenamiento local.</p>
+    </header>
 
-    <!-- Componente 2: Tablero de tareas -->
-    <section class="widget-card">
-      <task-board></task-board>
-    </section>
+    <div class="dashboard-grid">
+      <!-- Componente 1: Tiempo por geolocalización -->
+      <section class="widget-card">
+        <geo-weather></geo-weather>
+      </section>
+
+      <!-- Componente 2: Tablero de tareas -->
+      <section class="widget-card">
+        <task-board></task-board>
+      </section>
+    </div>
   </main>
 
   <!-- COMPONENTE REUTILIZABLE DE PIE DE PÁGINA -->

@@ -32,7 +32,9 @@ class MiCabecera extends HTMLElement {
         { url: 'animaciones.html', texto: 'Animaciones 2D/3D' }
       ],
       '3': [
-        { url: 'index.html', texto: 'Geolocalización' },
+        { url: 'index.html', texto: 'Dashboard' },
+        { url: 'canvas.html', texto: 'Canvas API' },
+        { url: 'geolocalizacion.html', texto: 'Geolocalización' },
         { url: 'storage.html', texto: 'Web Storage' },
         { url: 'fetch.html', texto: 'Fetch API' },
         { url: 'drag-drop.html', texto: 'Drag & Drop' }

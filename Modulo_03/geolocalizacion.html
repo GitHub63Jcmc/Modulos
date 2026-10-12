@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3 - API de Geolocalización</title>
+  
+  <!-- Estilos globales y específicos del módulo -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="css/modulo_03.css">
+</head>
+<body>
+
+  <!-- Cabecera componente unificado -->
+  <mi-cabecera modulo="3" pagina="geolocalizacion.html"></mi-cabecera>
+
+  <!-- Contenido principal centrado -->
+  <main class="contenedor-principal">
+    
+    <section class="tarjeta-contenido" data-categoria="tutorial" data-autor="Professor">
+      <header class="card-header">
+        <h2>3.6 API de Geolocalización en HTML5</h2>
+        <span class="meta-info">Lección práctica de APIs nativas</span>
+      </header>
+
+      <article>
+        <p>
+          La API de Geolocalización permite a los dispositivos compartir su ubicación geográfica con las aplicaciones web. Por motivos de privacidad y seguridad, el navegador siempre solicitará el consentimiento explícito del usuario antes de revelar la posición.
+        </p>
+
+        <h3>Métodos principales</h3>
+        <ul>
+          <li><code>navigator.geolocation.getCurrentPosition(exito, error, opciones)</code>: Obtiene la posición actual una sola vez.</li>
+          <li><code>navigator.geolocation.watchPosition(exito, error, opciones)</code>: Registra una función para ser llamada automáticamente cada vez que la posición del dispositivo cambie.</li>
+        </ul>
+
+        <h3>Ejemplo Práctico de Obtención de Coordenadas</h3>
+        <p>Haz clic en el botón para consultar la posición actual de tu dispositivo a través del navegador:</p>
+
+        <!-- Caja de demostración interactiva -->
+        <div class="card-box" style="text-align: center; margin-top: 20px;">
+          <button id="btnGeo" class="btn-home" style="background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Obtener mi ubicación</button>
+          
+          <div id="resultadoGeo" style="margin-top: 20px; font-family: monospace; font-size: 15px; background: #222; padding: 15px; border-radius: 6px; color: #4CAF50; min-height: 50px;">
+            Esperando acción del usuario...
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Script interactivo para la lección -->
+  <script>
+    document.getElementById('btnGeo').addEventListener('click', () => {
+      const contenedor = document.getElementById('resultadoGeo');
+      
+      if (!navigator.geolocation) {
+        contenedor.innerHTML = '❌ Tu navegador no soporta la API de Geolocalización.';
+        return;
+      }
+
+      contenedor.innerHTML = '🔄 Solicitando ubicación al navegador...';
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          const precision = position.coords.accuracy;
+          
+          contenedor.innerHTML = `✅ ¡Ubicación obtenida con éxito!<br>` +
+                                 `Latitud: ${lat.toFixed(4)}<br>` +
+                                 `Longitud: ${lon.toFixed(4)}<br>` +
+                                 `Precisión: ~${precision} metros`;
+        },
+        (error) => {
+          switch(error.code) {
+            case error.PERMISSION_DENIED:
+              contenedor.innerHTML = '❌ El usuario denegó el permiso de geolocalización.';
+              break;
+            case error.POSITION_UNAVAILABLE:
+              contenedor.innerHTML = '❌ La información de ubicación no está disponible.';
+              break;
+            case error.TIMEOUT:
+              contenedor.innerHTML = '❌ La petición para obtener la ubicación expiró.';
+              break;
+            default:
+              contenedor.innerHTML = '❌ Ocurrió un error desconocido.';
+              break;
+          }
+        },
+        { timeout: 10000, maximumAge: 60000 }
+      );
+    });
+  </script>
+
+  <!-- Pie de página componente reutilizable -->
+  <mi-pie></mi-pie>
+
+  <script src="../components/pie.js"></script>
+  <script src="../components/cabecera.js"></script>
+
+</body>
+</html>
