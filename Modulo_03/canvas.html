@@ -8,6 +8,7 @@
   <!-- Estilos globales y específicos del módulo -->
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/modulo_03.css">
+  <link rel="stylesheet" href="css/canvas.css">
 </head>
 <body>
 
@@ -37,55 +38,35 @@
         </p>
 
         <!-- Ejemplo Práctico en Directo -->
-        <div class="card-box" style="text-align: center; margin-top: 25px;">
-          <h4>Ejemplo Práctico en Directo: Dibujar Formas</h4>
-          <p style="font-size: 14px; color: #aaa;">Usa los botones para interactuar con el contexto gráfico de Canvas:</p>
-          
-          <div style="margin: 15px 0;">
-            <canvas id="miLienzo" width="500" height="250" style="background: #111; border: 1px solid #444; border-radius: 6px;"></canvas>
-          </div>
+        <!-- Ejemplo Práctico en Directo -->
+<div class="card-box canvas-demo-box">
+  <h4>Ejemplo Práctico en Directo: Dibujar Formas</h4>
+  <p class="canvas-demo-text">Usa los botones para interactuar con el contexto gráfico de Canvas:</p>
+  
+  <div class="canvas-wrapper">
+    <canvas id="miLienzo" width="500" height="250"></canvas>
+  </div>
 
-          <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-            <button id="btnRectangulo" class="btn-home" style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Dibujar Rectángulo</button>
-            <button id="btnCirculo" class="btn-home" style="background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Dibujar Círculo</button>
-            <button id="btnLimpiar" class="btn-home" style="background-color: #f44336; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Limpiar Lienzo</button>
-          </div>
+  <div class="canvas-btn-group">
+    <button id="btnRectangulo" class="btn-home btn-rect">Dibujar Rectángulo</button>
+    <button id="btnCirculo" class="btn-home btn-circulo">Dibujar Círculo</button>
+    <button id="btnLimpiar" class="btn-home btn-limpiar">Limpiar Lienzo</button>
+  </div>
+</div>
         </div>
       </article>
     </section>
 
   </main>
 
-  <!-- Script interactivo de la lección de Canvas -->
-  <script>
-    const canvas = document.getElementById('miLienzo');
-    const ctx = canvas.getContext('2d');
-
-    document.getElementById('btnRectangulo').addEventListener('click', () => {
-      ctx.fillStyle = '#2196F3';
-      ctx.fillRect(50, 50, 150, 100);
-    });
-
-    document.getElementById('btnCirculo').addEventListener('click', () => {
-      ctx.beginPath();
-      ctx.arc(350, 100, 50, 0, 2 * Math.PI);
-      ctx.fillStyle = '#4CAF50';
-      ctx.fill();
-      ctx.lineWidth = 3;
-      ctx.strokeStyle = '#fff';
-      ctx.stroke();
-    });
-
-    document.getElementById('btnLimpiar').addEventListener('click', () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    });
-  </script>
+  <!-- Aquí va el Script interactivo de la lección de Canvas -->
 
   <!-- Pie de página componente reutilizable -->
   <mi-pie></mi-pie>
 
   <script src="../components/pie.js"></script>
   <script src="../components/cabecera.js"></script>
+  <script src="js/canvas.js" defer></script>
 
 </body>
 </html>

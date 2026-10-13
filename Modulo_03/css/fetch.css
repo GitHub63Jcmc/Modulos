@@ -1,0 +1,39 @@
+/* Estilos específicos para la lección de Fetch API */
+.codigo-pre {
+  background: #111;
+  padding: 12px;
+  border-radius: 6px;
+  color: #4CAF50;
+  font-family: monospace;
+}
+
+.fetch-demo-box {
+  margin-top: 25px;
+}
+
+.fetch-demo-text {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.btn-fetch-action {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.fetch-resultado {
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  background: #222;
+  padding: 15px;
+  border-radius: 6px;
+  color: #ffeb3b;
+  min-height: 60px;
+  white-space: pre-wrap;
+}

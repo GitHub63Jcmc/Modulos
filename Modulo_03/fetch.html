@@ -7,6 +7,7 @@
   
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/modulo_03.css">
+  <link rel="stylesheet" href="css/fetch.css">
 </head>
 <body>
 
@@ -25,21 +26,19 @@
         </p>
 
         <h3>Estructura Básica</h3>
-        <pre style="background: #111; padding: 12px; border-radius: 6px; color: #4CAF50; font-family: monospace;">
-fetch('https://api.example.com/data')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+        <pre class="codigo-pre">
+        fetch('https://api.example.com/data')
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
         </pre>
 
-        <!-- Ejemplo Práctico Interactivo -->
-        <div class="card-box" style="margin-top: 25px;">
+    <!-- Ejemplo Práctico Interactivo -->
+        <div class="card-box fetch-demo-box">
           <h4>Ejemplo Práctico: Cargar Datos Remotos</h4>
-          <p style="font-size: 14px; color: #aaa;">Haz clic para consultar un servicio público de ejemplo:</p>
-          
-          <button id="btnFetch" class="btn-home" style="background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px;">Obtener Datos de API</button>
-          
-          <div id="resultadoFetch" style="margin-top: 15px; font-family: monospace; font-size: 14px; background: #222; padding: 15px; border-radius: 6px; color: #ffeb3b; min-height: 60px; white-space: pre-wrap;">
+          <p class="fetch-demo-text">Haz clic para consultar un servicio público de ejemplo:</p>
+          <button id="btnFetch" class="btn-home btn-fetch-action">Obtener Datos de API</button>
+          <div id="resultadoFetch" class="fetch-resultado">
             Esperando petición...
           </div>
         </div>
@@ -47,31 +46,13 @@ fetch('https://api.example.com/data')
     </section>
   </main>
 
-  <script>
-    document.getElementById('btnFetch').addEventListener('click', async () => {
-      const contenedor = document.getElementById('resultadoFetch');
-      contenedor.textContent = '⏳ Cargando datos desde la API...';
-
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-        if (!response.ok) throw new Error('Error en la respuesta del servidor');
-        const data = await response.json();
-        
-        contenedor.textContent = `✅ ¡Datos obtenidos con éxito!\n\n` +
-                                 `Nombre: ${data.name}\n` +
-                                 `Email: ${data.email}\n` +
-                                 `Ciudad: ${data.address.city}\n` +
-                                 `Empresa: ${data.company.name}`;
-      } catch (error) {
-        contenedor.textContent = `❌ Error al realizar la petición: ${error.message}`;
-      }
-    });
-  </script>
+   <!-- Aquí va el Script interactivo de la lección de Fetch -->
 
   <mi-pie></mi-pie>
 
   <script src="../components/pie.js"></script>
   <script src="../components/cabecera.js"></script>
+  <script src="js/fetch.js" defer></script>
 
 </body>
 </html>

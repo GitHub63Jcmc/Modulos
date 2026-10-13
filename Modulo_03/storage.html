@@ -8,6 +8,7 @@
   <!-- Estilos globales y específicos del módulo -->
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/modulo_03.css">
+  <link rel="stylesheet" href="css/storage.css">
 </head>
 <body>
 
@@ -36,14 +37,14 @@
         <p>Para manipular los datos se utilizan métodos sencillos como <code>setItem(clave, valor)</code>, <code>getItem(clave)</code>, <code>removeItem(clave)</code> y <code>clear()</code>.</p>
 
         <!-- Ejemplo Práctico Interactivo -->
-        <div class="card-box" style="margin-top: 20px;">
+        <div class="card-box storage-demo-box">
           <h4>Prueba Interactiva con localStorage</h4>
-          <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-            <input type="text" id="inputDato" placeholder="Escribe algo..." style="padding: 8px; flex: 1; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
-            <button id="btnGuardar" class="btn-home" style="background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Guardar</button>
-            <button id="btnBorrar" class="btn-home" style="background-color: #f44336; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Eliminar</button>
+          <div class="storage-inputs-wrapper">
+            <input type="text" id="inputDato" placeholder="Escribe algo..."         class="storage-input">
+            <button id="btnGuardar" class="btn-home btn-storage-guardar">Guardar</button>
+            <button id="btnBorrar" class="btn-home btn-storage-borrar">Eliminar</button>
           </div>
-          <div id="resultadoStorage" style="margin-top: 15px; font-family: monospace; font-size: 15px; background: #222; padding: 12px; border-radius: 6px; color: #ffeb3b;">
+          <div id="resultadoStorage" class="storage-resultado">
             Valor guardado actualmente: <span id="valorAlmacenado">Ninguno</span>
           </div>
         </div>
@@ -52,44 +53,14 @@
 
   </main>
 
-  <!-- Script interactivo de la lección -->
-  <script>
-    const inputDato = document.getElementById('inputDato');
-    const btnGuardar = document.getElementById('btnGuardar');
-    const btnBorrar = document.getElementById('btnBorrar');
-    const valorAlmacenado = document.getElementById('valorAlmacenado');
-
-    // Cargar valor previo si existe
-    const datoActual = localStorage.getItem('miDatoClave');
-    if (datoActual) {
-      valorAlmacenado.textContent = datoActual;
-      inputDato.value = datoActual;
-    }
-
-    btnGuardar.addEventListener('click', () => {
-      const valor = inputDato.value.trim();
-      if (valor !== '') {
-        localStorage.setItem('miDatoClave', valor);
-        valorAlmacenado.textContent = valor;
-        alert('¡Dato guardado con éxito en localStorage!');
-      } else {
-        alert('Por favor, escribe un texto antes de guardar.');
-      }
-    });
-
-    btnBorrar.addEventListener('click', () => {
-      localStorage.removeItem('miDatoClave');
-      inputDato.value = '';
-      valorAlmacenado.textContent = 'Ninguno';
-      alert('Dato eliminado del almacenamiento local.');
-    });
-  </script>
+  <!-- Aquí va el Script interactivo de la lección Storage -->
 
   <!-- Pie de página componente reutilizable -->
   <mi-pie></mi-pie>
 
   <script src="../components/pie.js"></script>
   <script src="../components/cabecera.js"></script>
+  <script src="js/storage.js" defer></script>
 
 </body>
 </html>
