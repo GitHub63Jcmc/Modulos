@@ -52,3 +52,12 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* Adaptación responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  #miLienzo {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+}
